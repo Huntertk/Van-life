@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react"
 import { Link } from "react-router-dom"
-import loadingIcon from "../src/assets/images/1496.gif"
+import loadingIcon from "../../src/assets/images/1496.gif"
 
 
 export default function Vans() {

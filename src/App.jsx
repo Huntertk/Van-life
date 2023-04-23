@@ -16,6 +16,7 @@ import HostLayout from '../Components/HostLayout'
 import HostVanInfo from '../Pages/Host/HostVanInfo'
 import HostVanPricing from '../Pages/Host/HostVanPricing'
 import HostVanPhotos from '../Pages/Host/HostVanPhotos'
+import NotFound from '../Pages/NotFound'
 
 
 function App() {
@@ -39,8 +40,9 @@ function App() {
               <Route index element={<HostVanInfo />} />
               <Route path="pricing" element={<HostVanPricing />} />
               <Route path="photos" element={<HostVanPhotos />} />
-            </Route>
+          </Route>
         </Route>
+        <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

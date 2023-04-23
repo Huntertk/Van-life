@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link, useLocation } from 'react-router-dom'
 import loadingIcon from "../../src/assets/images/1496.gif"
 
 
 const VansDetails = () => {
+    const location = useLocation()
     const param = useParams()
     const [isLoading, setIsLoading] = useState(true)
     const [van, setVan] = useState(null)
@@ -23,9 +24,16 @@ const VansDetails = () => {
                 <img  src={loadingIcon} />
             </div> 
     }
+    const search = location.state && location.state.search || ""
+    const typo = location.state && location.state.type || "all"
   return (
 
     <div className="van-detail-container">
+        <Link
+                to={`..${search}`}
+                relative="path"
+                className="back-button"
+            >&larr; <span>Back to {typo} vans</span></Link>
                 <div className="van-detail">
                     <img src={van.imageUrl} />
                     <i className={`van-type ${van.type} selected`}>{van.type}</i>
